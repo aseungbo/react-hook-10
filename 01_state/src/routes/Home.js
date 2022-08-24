@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+    // useState
     const [item, setItem] = useState(42);
     const incrementItem = () => setItem(item + 1);
     const decrementItem = () => setItem(item - 1);
+
+    // useInput
     const useInput = (initialValue, validator) => {
         const [value, setValue] = useState(initialValue);
         const onChange = (event) => {
@@ -12,10 +15,11 @@ const Home = () => {
         }
         return { value, onChange };
     };
+
     const name = useInput("");
     return (
         <div>
-            <h1> Hello React Hooks </h1>
+            <h1> Hello React Hooks useState</h1>
             <div className="useState">
                 <h2> useState item: {item} </h2>
                 <button onClick={incrementItem}> + </button>
@@ -24,9 +28,6 @@ const Home = () => {
             </div>
             <div className="useInput">
                 <input {...name} placeholder="Name"></input>
-                
-            </div>
-            <div>
 
             </div>
         </div>
